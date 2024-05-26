@@ -1,0 +1,23 @@
+{% extends 'med_ease/medease.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'queue.css' %}">
+{% endblock css %}
+
+{% block body %}
+
+<main>
+    <form action="" method="post" class="bookqueue_form">
+        {% csrf_token %}
+        {% if bookqueue_form.errors %}
+            <p style="color: red;">Error occurred during form validation</p>
+        {% endif %}
+            {{bookqueue_form.as_p}}
+        <div class="form-group">
+            <button type="submit">Book Queue</button>
+        </div>
+    </form>
+</main>
+{% endblock body%}

@@ -1,0 +1,38 @@
+{% extends 'med_ease/medease.html' %}
+{% load static %} <!--Load static files-->
+
+
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+{% endblock css %}
+ 
+{% block body %}
+
+  <main>
+    <div>
+      {% if message %}
+      <div class="alert alert-success" role="alert">
+        {{ message }}
+      </div>
+      {% endif %}
+    </div>
+    <div class="md:grid grid-cols-2 md:pt-16 md:pl-20 pt-4 ">
+            <div class="pl-4">
+                <img src="{% static 'media/doctor.jpg' %}" width="500px" alt="medease" class="rounded">
+            </div>
+    
+            
+            <div class="text-lg pl-4">
+                <h1 class="welcome-message font-bold md:text-3xl pb-3 pt-16">Welcome to MedEase</h1>
+                <p>Say goodbye to long queues and early wake-ups <br>by reserving your spot from the comfort of your own home.</p>
+                <p class="pt-2">Register now and experience the simplicity of MedEase.</p>
+            </div>
+         
+    </div> 
+
+  </main>
+
+
+   
+{% endblock body %}
