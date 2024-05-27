@@ -9,38 +9,32 @@
 {% block body %}
 
   <main>
- 
-    <div class="text-lg md:pl-96 pl-4">
         <div>
-                <h3 class="contactus font-bold md:text-3xl py-3 md:pl-20 pl-4">Contact us</h3>
-                <p class="md:pl-20 pl-4 pb-4">Before reservering your queue, if you have any <br>query you can ask for clarification here</p>
+                <h3 class="contactus font-bold md:text-3xl py-3  pl-4 pt-4 text-center">Contact us</h3>
+                <p class="pl-4 text-center">Before reservering your queue, if you have any <br>query you can ask for clarification here</p>
         </div>
      
-        <div class=" pl-4 md:pl-20 pt-4 bg-gray-600 rounded">
-                <form action="/contact/" method="post">
+        <div class="main">
+                <form action="/contact/" method="post" class="contact_form">
 
                         {%  csrf_token %}
                       
                         <p class="text-gray-600">Full name:</p>
-                        <p><input type="text" name="fullname" size="50" class="rounded w-8" style="width: 500px;"
-                                placeholder="Full name" id="full-name"></p>
+                        <p><input type="text" name="fullname" placeholder="Enter Full name"></p> 
                         <p class="text-gray-600">Phone number:</p>
-                        <p><input type="number" name="phonenumber" size="70" class="rounded" style="width: 500px;"
-                                placeholder="contact" id="phone-number"></p>
+                        <p><input type="number" name="phonenumber"  
+                                placeholder="Provide Contact" id="phone-number"></p>
                         <p class="text-gray-600">Email:</p>
-                        <p><input type="email" name="email" size="50" class="rounded" style="width: 500px;"
-                                placeholder="Email" id="email"></p>
+                        <p><input type="email" name="email" 
+                                placeholder="Email Here" id="email"></p>
                 
                         <p class="text-gray-600">Leave message below</p>
-                        <p><textarea cols="52" rows="2" class="rounded" style="width: 500px;"
+                        <p><textarea cols="52" rows="5"
                                 placeholder="Message here" id="message" name="message"></textarea></p>
                 
-                        <button type="submit" name="submit" class="rounded bg-white ml-40 p-2 align-items-center mt-4">Submit</button>
+                        <button type="submit" name="submit">Submit</button>
                 </form>
         </div>
-
-      
-    </div>
 
     
 

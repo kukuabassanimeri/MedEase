@@ -1,4 +1,13 @@
-.contact_form{
+main{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 30px;
+    
+}
+
+.bookqueue_form{
     background-color: gray; 
     padding: 20px;
     width: 600px; 
@@ -8,19 +17,10 @@
     align-items: stretch;
 }
 
-.main{
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    padding: 30px;
-    
-}
-
-.contact_form input[type="text"],
-.contact_form input[type="number"],
-.contact_form input[type="email"],
-.contact_form textarea  {
+.bookqueue_form input[type="text"],
+.bookqueue_form input[type="password"],
+.bookqueue_form input[type="email"],
+.bookqueue_form textarea  {
     width: 100%;  
     padding: 10px;  
     margin-top: 5px; 
@@ -28,7 +28,7 @@
     box-sizing: border-box; 
 }
 
-.contact_form button {
+.bookqueue_form button {
     background-color: white; 
     color: #333; 
     padding: 10px 15px; 
