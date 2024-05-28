@@ -15,10 +15,14 @@
         </div>
      
         <div class="main">
-                <form action="/contact/" method="post" class="contact_form">
+                <form action="" method="post" class="contact_form">
 
                         {%  csrf_token %}
-                      
+                        {% if message %}
+                                <div class="alert alert-success" role="alert" style="color:green">
+                                        {{ message }}
+                                </div>
+                        {% endif %}
                         <p class="text-gray-600">Full name:</p>
                         <p><input type="text" name="fullname" placeholder="Enter Full name"></p> 
                         <p class="text-gray-600">Phone number:</p>

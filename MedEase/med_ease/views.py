@@ -17,18 +17,21 @@ def home(request):
     return render(request, 'med_ease/home.html')
 
 def contact(request):
-    context = {'success': False}
+    context_variable = {}
+    if request.session.get('message', None):
+        message = request.session['message']
+        context_variable['message'] = message
+        del request.session['message']
     if request.method == 'POST': 
         fullname = request.POST['fullname']
         phonenumber = request.POST['phonenumber']
         email = request.POST['email']
         message = request.POST['message']
-        print(fullname, email, phonenumber, message)
-        
         ins = Contact(fullname= fullname, email = email, phonenumber = phonenumber, message = message) # create the data
         ins.save() # save the data in the database
-        context = {'success':True}
-    return render(request, 'med_ease/contact.html', context)
+        request.session['message'] = 'Your enquiry has been registered'
+        return redirect(request.path)
+    return render(request, 'med_ease/contact.html', context_variable)
 
 def about(request):
     return render(request, 'med_ease/about.html')
