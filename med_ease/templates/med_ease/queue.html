@@ -1,0 +1,26 @@
+{% extends 'med_ease/medease.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'queue.css' %}">
+{% endblock css %}
+
+{% block body %}
+
+<h1 class="font-bold text-3xl pb-3 md:text-center pt-4 pl-4">Welcome to Queue Booking Site</h1>
+<p class="md:text-center pl-4 text-lg ">You can reserve your spot by filling out details below</p>
+
+<main>
+    <form action="" method="post" class="bookqueue_form">
+        {% csrf_token %}
+        {% if bookqueue_form.errors %}
+            <p style="color: red;">Error occurred during form validation</p>
+        {% endif %}
+            {{bookqueue_form.as_p}}
+        <div class="form-group">
+            <button type="submit">Book Queue</button>
+        </div>
+    </form>
+</main>
+{% endblock body%}
