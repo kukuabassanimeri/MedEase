@@ -1,20 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"> <!-- Required meta tags -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MedEase</title>
     {% load static %} <!--Load static files-->
-    <!-- Bootstrap CSS -->
-   
+    
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <script src="https://kit.fontawesome.com/caeb9ec53e.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css" href="{% static 'medease.css' %}">
     
-
-    <!-- Block for additional CSS -->
     {% block css %}{% endblock css %}
 
     {% block title %}{% endblock title %}
@@ -35,18 +32,14 @@
       </ul>
   </nav>
 
+      {% block body %}{% endblock body %} 
 
-       <!--footer starts-->
-      
-      
-
-      {% block body %}{% endblock body %} <!--Tells django to replace them with content from other source-->
      
+       <!--footer starts-->
       <footer class="h-24 text-lg text-white font-bold text-center p-7">
         <p>Copyright © 2024 <br>All Rights Reserved | MedEase</p>
-        
       </footer> 
-
+      <!--Footer ends-->
   
   </body>
 </html>
