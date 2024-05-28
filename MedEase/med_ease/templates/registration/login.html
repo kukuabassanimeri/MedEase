@@ -10,7 +10,7 @@
 <p class="md:text-center pl-4 text-lg ">Use your Username and Password to login</p>
 
 <main class="pl-4">
-    <form action="" method="post">
+    <form action="" method="post" class="login_form">
         {% csrf_token %}
         {% if form.errors %}
             <p style="color: red;">{{ form.errors }}</p>

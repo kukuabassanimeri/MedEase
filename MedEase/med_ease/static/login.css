@@ -23,10 +23,10 @@ input[type="email"] {
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color:white;
 }
 
 button {
-    background-color: white; /* Bootstrap primary blue */
     color: black;
     padding: 10px;
     border: none;
@@ -34,20 +34,16 @@ button {
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
+   
 }
 
-button:hover {
+
+.login_form button{
+    background-color:white;
+    margin-top: 20px;
+    padding: 8px;
+}
+
+.login_form button:hover{
     background-color: #0056b3;
-}
-
-/* Link styling for any anchor tags in the form, if needed in the future */
-a {
-    color: #007BFF; /* Bootstrap primary blue */
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-a:hover {
-    text-decoration: underline;
 }
