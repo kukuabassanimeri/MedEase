@@ -62,7 +62,7 @@ def queue(request):
             context_variable = {'bookqueue_form':bookqueue_form}
             return render(request, 'med_ease/queue.html', context_variable)
         bookqueue_form.save()
-        request.session['message'] = 'Booking Successful'
+        request.session['message'] = 'Booking Successful, \nWe will get back to you shortly'
         return redirect(reverse('med_ease:home'))
         
         
