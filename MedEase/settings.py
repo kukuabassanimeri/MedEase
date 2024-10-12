@@ -130,6 +130,6 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = '/accounts/login/?next=/med_ease/queue/'
+LOGIN_URL = '/accounts/login/?next=/med_ease/queue/'#if user tries to access the queue while not logged in, they will be redirected to the same login page to login again. 
 
-LOGIN_REDIRECT_URL = '/med_ease/queue/'
+LOGIN_REDIRECT_URL = '/med_ease/queue/' #if login is successful, users should move to the queue and make booking. 

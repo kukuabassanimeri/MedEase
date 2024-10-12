@@ -12,3 +12,6 @@ class BookQueueForm(ModelForm):
     class Meta:
         model = BookQueue
         fields = ['Fullname', 'Phonenumber', 'Email', 'Message']
+        widgets = {
+            'Message': forms.Textarea(attrs={'cols': 20, 'rows': 5}),
+        }

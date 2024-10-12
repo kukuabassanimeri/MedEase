@@ -29,7 +29,7 @@ def contact(request):
         message = request.POST['message']
         ins = Contact(fullname= fullname, email = email, phonenumber = phonenumber, message = message) # create the data
         ins.save() # save the data in the database
-        request.session['message'] = 'Your enquiry has been registered'
+        request.session['message'] = 'Your enquiry has been received, we will get back to you soon'
         return redirect(request.path)
     return render(request, 'med_ease/contact.html', context_variable)
 
@@ -62,11 +62,10 @@ def queue(request):
             context_variable = {'bookqueue_form':bookqueue_form}
             return render(request, 'med_ease/queue.html', context_variable)
         bookqueue_form.save()
-        request.session['message'] = 'Booking Successful, \nWe will get back to you shortly'
+        request.session['message'] = 'Booking Successful, We will get back to you shortly'
         return redirect(reverse('med_ease:home'))
         
-        
-    
+
         
     
         
