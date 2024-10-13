@@ -1,0 +1,23 @@
+{% extends 'med_ease/medease.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+{% endblock css %}
+
+{% block body %}
+<h1 class="font-bold text-3xl pb-3 md:text-center pt-8 pl-4 login">Welcome to Log in Page</h1>
+<p class="md:text-center pl-4 text-lg ">Use your Username and Password to login</p>
+
+<main class="pl-4">
+    <form action="" method="post" class="login_form">
+        {% csrf_token %}
+        {% if form.errors %}
+            <p style="color: red;">{{ form.errors }}</p>
+        {% endif %}
+        {{ form.as_p }}
+    
+        <button type="submit">Login</button>
+    </form>
+</main>
+{% endblock body%}

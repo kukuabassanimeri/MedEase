@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MedEase</title>
+    {% load static %} <!--Load static files-->
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://kit.fontawesome.com/caeb9ec53e.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'medease.css' %}">
+    
+    {% block css %}{% endblock css %}
+
+    {% block title %}{% endblock title %}
+  </head>
+  <body class="">
+ 
+
+    <!--Navigation bar-->
+    
+    <nav class="navbar">
+      <ul class="list-none flex flex-col md:flex-row items-center space-y-5 md:space-y-0 md:space-x-5 md:pr-44 text-lg text-white font-bold md:h-20 h-full ">
+          <li class="flex-1 rounded-full hover:cursor-pointer hover:text-orange-600 pl-20 animate-pulse hidden  md:inline"><img src="{% static 'media/medeaselogo.jpg' %}" alt="MedEase Logo" class="h-20 pt-4 pb-4 "></li>
+          <li class="animate-pulse navlinks hover:text-orange-600"><a href="{% url 'med_ease:home' %}">Home</a></li>
+          <li class="animate-pulse navlinks hover:text-orange-600"><a href="{% url 'med_ease:about' %}">About Us</a></li>
+          <li class="animate-pulse navlinks hover:text-orange-600"><a href="{% url 'med_ease:signup' %}">Reserve Queue</a></li>
+          <li class="animate-pulse navlinks hover:text-orange-600"><a href="{% url 'med_ease:contact' %}">Contact Us</a></li>
+          
+      </ul>
+  </nav>
+
+      {% block body %}{% endblock body %} 
+
+     
+       <!--footer starts-->
+      <footer class="h-24 text-lg text-white font-bold text-center p-7">
+        <p>Copyright © 2024 <br>All Rights Reserved | MedEase</p>
+      </footer> 
+      <!--Footer ends-->
+  
+  </body>
+</html>
